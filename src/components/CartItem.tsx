@@ -6,29 +6,24 @@ import {
   StyleSheet,
   TouchableOpacity,
   Alert,
+  Pressable,
 } from "react-native";
 import { useDispatch } from "react-redux";
 import {
   increaseQuantity,
   decreaseQuantity,
   removeItem,
-} from "../store/cartSlice"; // Update path to your cartSlice file
-import { AntDesign } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
+} from "../store/cartSlice";
+import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
+import { RootStackParamList, PizzaProps } from "../navigation/AppNavigator";
 
-interface PizzaItemProps {
-  id: number;
-  name: string;
-  size: string;
-  price: number;
-  category: string;
-  image: string;
-  quantity: number;
-}
+interface CartItemProps extends PizzaProps {}
 
-const CartItem: React.FC<PizzaItemProps> = (props) => {
+const CartItem: React.FC<CartItemProps> = (props) => {
   const dispatch = useDispatch();
   const { id, name, size, price, category, image, quantity } = props;
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   const handleIncrease = () => {
     dispatch(
@@ -52,7 +47,18 @@ const CartItem: React.FC<PizzaItemProps> = (props) => {
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: image }} style={styles.image} />
+      <TouchableOpacity
+        style={{width:'45%'}}
+        onPress={() =>
+          navigation.navigate("Details", {
+            pizza: { id, name, size, price, category, image, quantity },
+          })
+        }
+      >
+        <Image source={{ uri: image }} style={styles.image} />
+      </TouchableOpacity>
+      {/* <Image source={{ uri: image }} style={styles.image} /> */}
+
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.details}>
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   image: {
-    width: "30%",
+    width: "100%",
     height: 150,
   },
   infoContainer: {
@@ -145,6 +151,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     color: "white",
   },
+  
 });
 
 export default CartItem;

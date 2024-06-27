@@ -21,18 +21,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    height: 60, // Adjust height as per your design
+    height: 60, 
     paddingHorizontal: 16,
+    width:"100%"
   },
   text: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "white", // Ensure text color is visible against the background
+    color: "white", 
     fontStyle: "italic",
   },
   image: {
-    width: 50, // Adjust width as per your design
-    height: 50, // Adjust height as per your design
+    width: 50,
+    height: 50, 
   },
   search: {},
 });

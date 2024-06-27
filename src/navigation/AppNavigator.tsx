@@ -16,11 +16,22 @@ import { useDispatch } from "react-redux";
 import { setItems } from "../store/cartSlice";
 import { StatusBar } from "expo-status-bar";
 
+
+export interface PizzaProps {
+  id: number;
+  name: string;
+  size: string;
+  price: number;
+  category: string;
+  image: string;
+  quantity: number;
+}
+
 export type RootStackParamList = {
   Home: undefined;
   Cart: undefined;
   BottomTab: undefined;
-  Details: { pizza: { id: number; name: string } };
+  Details: { pizza: PizzaProps };
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -30,6 +41,7 @@ const BottomTab = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        tabBarActiveTintColor: "red",
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: any;
 
@@ -43,7 +55,7 @@ const BottomTab = () => {
             <Ionicons
               name={iconName}
               size={size}
-              color={focused ? "purple" : color}
+              color={focused ? "red" : color}
             />
           );
         },

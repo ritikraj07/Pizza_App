@@ -10,13 +10,16 @@ import {
   View,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { RootStackParamList } from "../navigation/AppNavigator"; // Adjust the path if needed
-import { addItem } from "../store/cartSlice"; // Adjust the path if needed
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../navigation/AppNavigator";
+import { addItem } from "../store/cartSlice";
 import Navbar from "../components/Navbar";
 
 type PizzaItemDetailsProps = {
   route: RouteProp<RootStackParamList, "Details">;
+  navigation: StackNavigationProp<RootStackParamList, "Details">;
 };
+
 type PizzaProps = {
   id: number;
   name: string;
@@ -25,7 +28,11 @@ type PizzaProps = {
   category: string;
   image: string;
 };
-const PizzaItemDetails: React.FC<PizzaItemDetailsProps> = ({ route }) => {
+
+const PizzaItemDetails: React.FC<PizzaItemDetailsProps> = ({
+  route,
+  navigation,
+}) => {
   const cart = useSelector((state: any) => state.cart);
   const dispatch = useDispatch();
   const { pizza } = route.params as { pizza: PizzaProps };
@@ -53,7 +60,7 @@ const PizzaItemDetails: React.FC<PizzaItemDetailsProps> = ({ route }) => {
   };
 
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Navbar title="Pizza Details" />
       <View style={styles.container}>
         <Image source={{ uri: pizza.image }} style={styles.image} />
@@ -76,6 +83,12 @@ const PizzaItemDetails: React.FC<PizzaItemDetailsProps> = ({ route }) => {
           </TouchableOpacity>
         </View>
       </View>
+      <TouchableOpacity
+        style={styles.backBtm}
+        onPress={() => navigation.goBack()}
+      >
+        <MaterialIcons name="arrow-back" size={24} color="black" />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -84,6 +97,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor: "#fff",
+    flex: 1,
   },
   image: {
     width: "100%",
@@ -123,6 +137,17 @@ const styles = StyleSheet.create({
     color: "white",
     width: "48%",
     justifyContent: "space-around",
+  },
+  backBtm: {
+    position: "absolute",
+    bottom: 30,
+    left: 25,
+    backgroundColor: "red",
+    padding: 10,
+    borderRadius: 50,
+    elevation: 3,
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 

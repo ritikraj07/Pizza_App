@@ -7,6 +7,7 @@ const pizzas = [
     category: "Vegetarian",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/9/91/Pizza-3007395.jpg",
+    quantity: 1,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const pizzas = [
     category: "Non-Vegetarian",
     image:
       "https://www.indianhealthyrecipes.com/wp-content/uploads/2015/10/pizza-recipe-1.jpg",
+    quantity: 1,
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const pizzas = [
     category: "Vegetarian",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwHqQJnA5dY-qNKgnDnnfQkqzFfM2AglsvQMmiLz5DPLyUTB73C-cGXl4JqoSx1oR8Hg0&usqp=CAU",
+    quantity: 1,
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ const pizzas = [
     price: 13.99,
     category: "Non-Vegetarian",
     image: "https://www.pamperedchef.com/iceberg/com/recipe/1684007-lg.jpg",
+    quantity: 1,
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const pizzas = [
     category: "Non-Vegetarian",
     image:
       "https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg",
+    quantity: 1,
   },
   {
     id: 6,
@@ -51,6 +56,7 @@ const pizzas = [
     category: "Vegetarian",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYE3nqICmRtsBn7B7ZvKseT77ckAig2N7m9VAQhEXrdrrSA9dG4d5xq55ekv-hQJUpAmw&usqp=CAU",
+    quantity: 1,
   },
   {
     id: 7,
@@ -60,6 +66,7 @@ const pizzas = [
     category: "Non-Vegetarian",
     image:
       "https://www.indianhealthyrecipes.com/wp-content/uploads/2015/10/pizza-recipe-1.jpg",
+    quantity: 1,
   },
   {
     id: 8,
@@ -69,6 +76,7 @@ const pizzas = [
     category: "Vegetarian",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwHqQJnA5dY-qNKgnDnnfQkqzFfM2AglsvQMmiLz5DPLyUTB73C-cGXl4JqoSx1oR8Hg0&usqp=CAU",
+    quantity: 1,
   },
   {
     id: 9,
@@ -77,6 +85,7 @@ const pizzas = [
     price: 13.99,
     category: "Non-Vegetarian",
     image: "https://www.pamperedchef.com/iceberg/com/recipe/1684007-lg.jpg",
+    quantity: 1,
   },
   {
     id: 10,
@@ -86,6 +95,7 @@ const pizzas = [
     category: "Vegetarian",
     image:
       "https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg",
+    quantity: 1,
   },
 ];
 

@@ -15,7 +15,6 @@ type Props = {
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
-
       <Navbar title="Pizza App" />
 
       <FlatList
