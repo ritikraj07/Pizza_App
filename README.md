@@ -3,6 +3,8 @@
 
 This is a simple React Native application that allows users to browse pizzas, add them to cart, and view pizza details. It demonstrates navigation using React Navigation, state management with Redux Toolkit, and persistent cart data using AsyncStorage.
 
+App Video: https://youtube.com/shorts/H61hFmu2T00
+
 ## Features
 
 - **Navigation:** Implemented using React Navigation with two tabs: "Home" and "Cart".
