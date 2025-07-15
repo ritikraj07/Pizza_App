@@ -79,6 +79,23 @@ const StackScreen = () => (
   </Stack.Navigator>
 );
 
+/**
+ * AppNavigator is a component that sets up the navigation structure of the app.
+ * It configures the navigation container with a stack navigator containing the main screens.
+ * 
+ * This component also manages the app's appearance based on the current color scheme,
+ * toggling between dark and light mode. It handles the persistence of cart items using
+ * AsyncStorage, synchronizing it with the Redux store.
+ *
+ * Effects:
+ * - Retrieves cart items from AsyncStorage when the component mounts and updates the Redux store.
+ * - Stores cart items in AsyncStorage whenever the cart state changes.
+ *
+ * The component wraps the navigation stack in a SafeAreaProvider and SafeAreaView to ensure
+ * that the content is displayed within the safe area boundaries of a device.
+ */
+
+
 const AppNavigator = () => {
   const cart = useSelector((state: RootState) => state.cart);
   const { setItem, getItem, removeItem } = useAsyncStorage();
